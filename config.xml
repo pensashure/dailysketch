@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<widget xmlns = "http://www.w3.org/ns/widgets" xmlns:gap = "http://phonegap.com/ns/1.0"
+		id = "com.pensashure.dailysketch" version = "1.0.0">
+
+	<name>Daily Sketch</name>
+	<description>Get a sketch every day to practice with Visual Thinking and share your creations</description>
+	<author email="support@pensashure.com">Esteve Camps</author>
+
+	<platform name="android">
+
+		<icon src="www/img/appIcons/android/mipmap-ldpi/ic_launcher.png" qualifier="ldpi" />
+		<icon src="www/img/appIcons/android/mipmap-mdpi/ic_launcher.png" qualifier="mdpi" />
+		<icon src="www/img/appIcons/android/mipmap-hdpi/ic_launcher.png" qualifier="hdpi" />
+		<icon src="www/img/appIcons/android/mipmap-xdpi/ic_launcher.png" qualifier="xhdpi" />
+		<icon src="www/img/appIcons/android/mipmap-xxdpi/ic_launcher.png" qualifier="xxhdpi" />
+		<icon src="www/img/appIcons/android/mipmap-xxxdpi/ic_launcher.png" qualifier="xxxhdpi" />
+
+		<splash src="www/img/appIcons/android/splash/drawable-ldpi/screen.png" qualifier="ldpi" />
+		<splash src="www/img/appIcons/android/splash/drawable-mdpi/screen.png" qualifier="mdpi" />
+		<splash src="www/img/appIcons/android/splash/drawable-hdpi/screen.png" qualifier="hdpi" />
+		<splash src="www/img/appIcons/android/splash/drawable-xhdpi/screen.png" qualifier="xhdpi" />
+		<splash src="www/img/appIcons/android/splash/drawable-xxhdpi/screen.png" qualifier="xxhdpi" />
+		<splash src="www/img/appIcons/android/splash/drawable-xxxhdpi/screen.png" qualifier="xxxhdpi" />
+
+	</platform>
+	
+	<platform name="ios">
+
+		<!-- iPhone / iPod Touch -->
+		<icon src="www/img/appIcons/ios/AppIcon.appiconset/Icon-App-57x57@1x.png" width="57" height="57" />
+		<icon src="www/img/appIcons/ios/AppIcon.appiconset/Icon-App-57x57@2x.png" width="114" height="114" />
+		<!-- iPad -->
+		<icon src="www/img/appIcons/ios/AppIcon.appiconset/Icon-App-72x72@1x.png" width="72" height="72" />
+		<icon src="www/img/appIcons/ios/AppIcon.appiconset/Icon-App-72x72@2x.png" width="144" height="144" />
+		<!-- iPhone Spotlight and Settings Icon -->
+		<icon src="www/img/appIcons/ios/AppIcon.appiconset/Icon-App-29x29@1x.png" width="29" height="29" />
+		<icon src="www/img/appIcons/ios/AppIcon.appiconset/Icon-App-29x29@2x.png" pwidth="58" height="58" />
+		<!-- iPad Spotlight and Settings Icon -->
+		<icon src="www/img/appIcons/ios/AppIcon.appiconset/Icon-Small-50x50@1x.png" width="50" height="50" />
+		<icon src="www/img/appIcons/ios/AppIcon.appiconset/Icon-Small-50x50@2x.png" width="100" height="100" />
+
+		<!-- iPhone and iPod touch -->
+		<splash src="www/img/appIcons/ios/splash/Default.png" width="320" height="480" />
+		<splash src="www/img/appIcons/ios/splash/Default@2x~iphone_640x960.png" width="640" height="960" />
+		<!-- iPhone 5 / iPod Touch (5th Generation) -->
+		<splash src="www/img/appIcons/ios/splash/Default-568h@2x~iphone_640x1136.png" width="640" height="1136" />
+		<!-- iPhone 6 -->
+		<splash src="www/img/appIcons/ios/splash/Default-750@2x~iphone6-portrait_750x1334.png" width="750" height="1334" />
+		<splash src="www/img/appIcons/ios/splash/Default-1242@3x~iphone6s-portrait_1242x2208.png" width="1242" height="2208" />
+		<splash src="www/img/appIcons/ios/splash/Default-1242@3x~iphone6s-landscape_2208x1242.png" width="2208" height="1242" />
+		<!-- iPad -->
+		<splash src="www/img/appIcons/ios/splash/Default-Portrait~ipad_768x1024.png" width="768" height="1024" />
+		<splash src="www/img/appIcons/ios/splash/Default-Landscape~ipad_1024x768.png" width="1024" height="768" />
+		<!-- Retina iPad -->
+		<splash src="www/img/appIcons/ios/splash/Default-Portrait@2x~ipad_1536x2048.png" width="1536" height="2048" />
+		<splash src="www/img/appIcons/ios/splash/Default-Landscape@2x~ipad_2048x1536.png" width="2048" height="1536" />
+
+	</platform>
+
+	<preference name="phonegap-version" value="cli-6.5.0" />
+	<preference name="orientation" value="portrait" />
+
+	<access origin="http://api.pensashure.com" />
+
+</widget>

@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>DailySketch.com</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<link rel="stylesheet" href="fonts/font-awesome-4.3.0.min.css" />
+		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+		<link rel="stylesheet" href="vendor/waves/waves.min.css" />
+		<link rel="stylesheet" href="vendor/wow/animate.css" />
+		<link rel="stylesheet" href="css/nativedroid2.css" />
+		<link rel="stylesheet" href="css/nativedroid2.color.deep-orange.css" />
+
+		<meta name="mobile-web-app-capable" content="yes">
+	 	<meta name="apple-mobile-web-app-capable" content="yes" />
+    	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+	</head>
+	<body>
+
+		<div data-role="page" id="home">
+
+			<nd2-include data-src="footer.html"></nd2-include>
+
+			<div role="main" id="homeContent" class="ui-content" data-inset="false" style="text-align:center">
+				<img src="img/bg.png"/>
+			</div>
+
+		</div>
+
+		<div data-role="page" id="timeline" style="text-align:center">
+
+			<nd2-include data-src="footer.html"></nd2-include>
+			<h1 class="nd2-headline">LATEST 10 SKETCHES</h1>
+			<div role="main" id="timelineContent" class="ui-content" data-inset="false">
+				<nd2-include data-src="timeline.html"></nd2-include>
+			</div>
+			
+		</div>
+
+		<div data-role="page" id="login">
+
+			<nd2-include data-src="footer.html"></nd2-include>
+			<div role="main" id="loginContent" class="ui-content" data-inset="false" style="padding:3em;">
+				<div style="text-align:center"><img src="img/lock.png"/></div>
+				<nd2-include data-src="login.html"></nd2-include>
+			</div>
+
+		</div>
+
+		<div data-role="page" id="about">
+
+			<nd2-include data-src="footer.html"></nd2-include>
+			<div role="main" id="aboutContent" class="ui-content" data-inset="false">
+				<nd2-include data-src="about.html"></nd2-include>
+			</div>
+
+		</div>
+
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/jquery-ui-1.11.4.min.js"></script>
+		<script src="js/jquery.mobile-1.4.5.min.js"></script>
+		<script src="vendor/waves/waves.min.js"></script>
+		<script src="vendor/wow/wow.min.js"></script>
+		<script src="js/nativedroid2.js"></script>
+		<script src="nd2settings.js"></script>
+
+	</body>
+</html>
