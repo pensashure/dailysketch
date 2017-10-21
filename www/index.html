@@ -3,6 +3,7 @@
 	<head>
 		<title>DailySketch.com</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="google-signin-client_id" content="339637138263-9t7ll2udiuqncstdaqmirnk97qpp6huv.apps.googleusercontent.com">
 
 		<link rel="stylesheet" href="fonts/font-awesome-4.3.0.min.css" />
 		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
@@ -14,6 +15,33 @@
 		<meta name="mobile-web-app-capable" content="yes">
 	 	<meta name="apple-mobile-web-app-capable" content="yes" />
     	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<script>
+			function onSuccess(googleUser) {
+			  	console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+				var id_token = googleUser.getAuthResponse().id_token;
+				var xhr = new XMLHttpRequest();
+				xhr.open('POST', 'http://localhost/dailysketchServer/tokensignin');
+				xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+				xhr.onload = function() {
+  					console.log('Signed in as: ' + xhr.responseText);
+				};
+				xhr.send('idtoken=' + id_token);
+			}
+			function onFailure(error) {
+			  console.log(error);
+			}
+			function renderButton() {
+			  gapi.signin2.render('my-signin2', {
+				'scope': 'profile email',
+				'width': 240,
+				'height': 50,
+				'longtitle': true,
+				'theme': 'dark',
+				'onsuccess': onSuccess,
+				'onfailure': onFailure
+			  });
+			}
+		  </script>
 
 	</head>
 	<body>
@@ -23,7 +51,8 @@
 			<nd2-include data-src="footer.html"></nd2-include>
 
 			<div role="main" id="homeContent" class="ui-content" data-inset="false" style="text-align:center">
-				<img src="img/bg.png"/>
+				<img src="img/mini_avatar.png" style="margin:40px"/>
+				<div id="my-signin2" style="width:300px; margin:auto"></div>
 			</div>
 
 		</div>
@@ -64,6 +93,7 @@
 		<script src="vendor/wow/wow.min.js"></script>
 		<script src="js/nativedroid2.js"></script>
 		<script src="nd2settings.js"></script>
+		<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 
 	</body>
 </html>
