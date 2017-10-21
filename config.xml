@@ -8,7 +8,8 @@
 	<author email="support@pensashure.com">Esteve Camps</author>
 	<icon src="www/img/appIcons/default-icon.png" />
 	
-	<plugin name="cordova-plugin-inappbrowser" spec="~1.7.1" />
+	<plugin name="cordova-plugin-splashscreen" spec="~4.0.3" source="git" />
+	<plugin name="cordova-plugin-inappbrowser" spec="~1.7.1" source="git" />
 
 	<platform name="android">
 
