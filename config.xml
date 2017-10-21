@@ -62,5 +62,6 @@
 	<preference name="orientation" value="portrait" />
 
 	<access origin="http://api.pensashure.com" />
+	<access origin="https://apis.google.com" />
 
 </widget>
