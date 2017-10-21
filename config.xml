@@ -6,7 +6,8 @@
 	<name>Daily Sketch</name>
 	<description>Get a sketch every day to practice with Visual Thinking and share your creations</description>
 	<author email="support@pensashure.com">Esteve Camps</author>
-
+	<icon src="www/img/appIcons/android/mipmap-ldpi/ic_launcher.png" />
+	
 	<platform name="android">
 
 		<icon src="www/img/appIcons/android/mipmap-ldpi/ic_launcher.png" qualifier="ldpi" />
