@@ -15,33 +15,37 @@
 		<meta name="mobile-web-app-capable" content="yes">
 	 	<meta name="apple-mobile-web-app-capable" content="yes" />
     	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-		<script>
-			function onSuccess(googleUser) {
-			  	console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-				var id_token = googleUser.getAuthResponse().id_token;
-				var xhr = new XMLHttpRequest();
-				xhr.open('POST', 'http://localhost/dailysketchServer/tokensignin');
-				xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-				xhr.onload = function() {
-  					console.log('Signed in as: ' + xhr.responseText);
-				};
-				xhr.send('idtoken=' + id_token);
+		<style type="text/css">
+			#customBtn {
+				display: inline-block;
+				background: white;
+				color: #444;
+				width: 190px;
+				border-radius: 5px;
+				border: thin solid #888;
+				box-shadow: 1px 1px 1px grey;
+				white-space: nowrap;
 			}
-			function onFailure(error) {
-			  console.log(error);
+			#customBtn:hover {
+				cursor: pointer;
 			}
-			function renderButton() {
-			  gapi.signin2.render('my-signin2', {
-				'scope': 'profile email',
-				'width': 240,
-				'height': 50,
-				'longtitle': true,
-				'theme': 'dark',
-				'onsuccess': onSuccess,
-				'onfailure': onFailure
-			  });
+			span.icon {
+				background: url('img/g-normal.png') transparent 5px 50% no-repeat;
+				display: inline-block;
+				vertical-align: middle;
+				width: 42px;
+				height: 42px;
 			}
-		  </script>
+			span.buttonText {
+				display: inline-block;
+				vertical-align: middle;
+				padding-right: 42px;
+				font-size: 14px;
+				font-weight: bold;
+				/* Use the Roboto font that is loaded in the <head> */
+				font-family: 'Roboto', sans-serif;
+			}
+		</style>
 
 	</head>
 	<body>
@@ -52,7 +56,13 @@
 
 			<div role="main" id="homeContent" class="ui-content" data-inset="false" style="text-align:center">
 				<img src="img/mini_avatar.png" style="margin:40px"/>
-				<div id="my-signin2" style="width:300px; margin:auto"></div>
+				<div id="gSignInWrapper">
+					<div id="customBtn" class="customGPlusSignIn">
+					  <span class="icon"></span>
+					  <span class="buttonText">Sign in with Google</span>
+					</div>
+				  </div>
+				  <div id="name"></div>
 			</div>
 
 		</div>
@@ -93,7 +103,8 @@
 		<script src="vendor/wow/wow.min.js"></script>
 		<script src="js/nativedroid2.js"></script>
 		<script src="nd2settings.js"></script>
-		<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+		<script src="js/google-signin.js"></script>
+		<script>startApp();</script>
 
 	</body>
 </html>
