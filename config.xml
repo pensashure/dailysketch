@@ -8,6 +8,8 @@
 	<author email="support@pensashure.com">Esteve Camps</author>
 	<icon src="www/img/appIcons/default-icon.png" />
 	
+	<plugin name="cordova-plugin-inappbrowser" spec="~1.7.1" />
+
 	<platform name="android">
 
 		<icon src="www/img/appIcons/android/mipmap-ldpi/ic_launcher.png" qualifier="ldpi" />
