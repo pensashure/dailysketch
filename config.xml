@@ -64,5 +64,7 @@
 
 	<access origin="http://api.pensashure.com" />
 	<access origin="https://apis.google.com" />
+	<access origin="https://accounts.google.com" />
+	<access origin="https://ssl.gstatic.com" />
 
 </widget>
