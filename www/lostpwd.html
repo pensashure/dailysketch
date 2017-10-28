@@ -1,9 +1,14 @@
-<form method="post" action="#pageone" data-ajax="true">
-    <div class="ui-field-contain" style="border-bottom-width:0">
-        <label for="email" class="ui-hidden-accessible">Email</label>
-        <input type="email" name="email" id="email" value="" placeholder="your@email.com">
+<div role="main" id="homeContent" class="ui-content" data-inset="false" style="padding:3em;">
+    <div role="main" id="lostpwdContent" class="ui-content" data-inset="false" style="padding:3em;">
+        <div style="text-align:center"><img src="img/lock.png"/></div>
+        <form method="post" action="#pageone" data-ajax="true">
+            <div class="ui-field-contain" style="border-bottom-width:0">
+                <label for="email" class="ui-hidden-accessible">Email</label>
+                <input type="email" name="email" id="email" value="" placeholder="your@email.com">
+            </div>
+            <button class="ui-btn"><i class="zmdi zmdi-mail-send"></i>Send me my credentials</button>
+            <a href='#home' class='ui-btn ui-mini nd2-btn-icon-block' data-ajax='false'>
+                    <i class="zmdi zmdi-mail-send"></i>Login</a>
+        </form>
     </div>
-    <button class="ui-btn"><i class="zmdi zmdi-mail-send"></i>Send me my credentials</button>
-    <a href='#home' class='ui-btn ui-mini nd2-btn-icon-block' data-ajax='false'>
-            <i class="zmdi zmdi-mail-send"></i>Login</a>
-</form> 
+</div>

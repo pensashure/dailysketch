@@ -1,17 +1,22 @@
-<form method="post" action="#pageone" data-ajax="true">
-    <div class="ui-field-contain" style="border-bottom-width:0">
-        <label for="email" class="ui-hidden-accessible">Email</label>
-        <input type="email" name="email" id="email" value="" placeholder="your@email.com">
+<div role="main" id="homeContent" class="ui-content" data-inset="false" style="padding:3em;">
+    <div role="main" id="registerContent" class="ui-content" data-inset="false" style="padding:3em;">
+        <div style="text-align:center"><img src="img/register-user.png"/></div>
+            <form method="post" action="#pageone" data-ajax="true">
+                <div class="ui-field-contain" style="border-bottom-width:0">
+                    <label for="email" class="ui-hidden-accessible">Email</label>
+                    <input type="email" name="email" id="email" value="" placeholder="your@email.com">
+                </div>
+                <div class="ui-field-contain" style="border-bottom-width:0">
+                    <label for="passwd" class="ui-hidden-accessible">Password</label>
+                    <input type="password" name="passwd" id="passwd" value="password">
+                </div>
+                <div class="ui-field-contain" style="border-bottom-width:0">
+                    <label for="repasswd" class="ui-hidden-accessible">Re-type password</label>
+                    <input type="password" name="repasswd" id="repasswd" value="repassword">
+                </div>
+                <button class="ui-btn"><i class="zmdi zmdi-mail-send"></i>Register</button>
+                <a href='#home' class='ui-btn ui-mini nd2-btn-icon-block' data-ajax='false'>
+                        <i class="zmdi zmdi-mail-send"></i>Login</a>
+            </form>
     </div>
-    <div class="ui-field-contain" style="border-bottom-width:0">
-        <label for="passwd" class="ui-hidden-accessible">Password</label>
-        <input type="password" name="passwd" id="passwd" value="password">
-    </div>
-    <div class="ui-field-contain" style="border-bottom-width:0">
-        <label for="repasswd" class="ui-hidden-accessible">Re-type password</label>
-        <input type="password" name="repasswd" id="repasswd" value="">
-    </div>
-    <button class="ui-btn"><i class="zmdi zmdi-mail-send"></i>Register</button>
-    <a href='#home' class='ui-btn ui-mini nd2-btn-icon-block' data-ajax='false'>
-            <i class="zmdi zmdi-mail-send"></i>Login</a>
-</form> 
+</div>
