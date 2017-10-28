@@ -7,9 +7,10 @@
 	<description>Get a sketch every day to practice with Visual Thinking and share your creations</description>
 	<author email="support@pensashure.com">Esteve Camps</author>
 	<icon src="www/img/appIcons/default-icon.png" />
-	
-	<plugin name="cordova-plugin-splashscreen" spec="~4.0.3" source="npm" />
-	<plugin name="cordova-plugin-inappbrowser" spec="~1.7.1" source="npm" />
+	<splash src="www/img/appIcons/android/splash/drawable-xhdpi/screen.png" />
+
+	<plugin name="cordova-plugin-splashscreen" source="npm" />
+	<plugin name="cordova-plugin-device" source="npm">
 
 	<platform name="android">
 
