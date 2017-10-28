@@ -10,7 +10,7 @@
 	<splash src="www/img/appIcons/android/splash/drawable-xhdpi/screen.png" />
 
 	<plugin name="cordova-plugin-splashscreen" source="npm" />
-	<plugin name="cordova-plugin-device" source="npm">
+	<plugin name="cordova-plugin-device" source="npm" />
 
 	<platform name="android">
 
