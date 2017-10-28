@@ -20,3 +20,29 @@
             </form>
     </div>
 </div>
+
+<script src="js/jquery.validate-1.17.0.js" />
+<script>
+    $(document).ready(function() {
+        $( "form" ).validate({
+            rules: {
+                email: {
+                    required: true,
+                    email: true
+                },
+                passwd: {
+                    required: true,
+                    min:6,
+                    max:10
+                },
+                repasswd: {
+                    required: true,
+                    equalTo: '#passwd'
+                }
+            },
+            errorPlacement: function( error, element ) {
+                error.appendTo( $('#' + element.attr('name') + '-error' ));
+            }
+        });
+    });
+</script>
