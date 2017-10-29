@@ -31,43 +31,47 @@ $(document).ready(function() {
 			dataType: 'json',
 			async: false,
 			success: function(data) {
-				var messageString = 'Login successful!';
-				if (data.result != 'OK') {
-					window.myLogger.log(data);
-					messageString = 'An error was occurred. Retry later and contact us if error persists.';
-				} else {
-                    $('#loginContent').hide();
-                    $('#workingContent').show();
-                    $('#timelineButton div a').removeClass('ui-disabled');
-                    $('#newsButton div a').removeClass('ui-disabled');
-                    $('#loginButton div a img').attr('src', 'img/logout-sketch.png');
-                    $('#loginButton').on('click', function(e) {
-                        alert("Logout");
-                        $('#loginButton div a img').attr('src', 'img/login-sketch.png');
-                        $('#loginContent').show();
-                        $('#workingContent').hide();
-                        toastMessage('Logout done!');
-                    });
-                    // TODO Cal eliminar el form de login i posar quelcom
-                }
-				toastMessage(messageString);
+				proceedToLogin(data);
 			},
 			error: function (xhr, ajaxOptions, thrownError) {
 				window.myLogger.log("DailySketch Error: " + xhr.status + "\n" +
 					"Message: " + xhr.statusText + "\n" +
 					"Response: " + xhr.responseText + "\n" + thrownError);
-				new $.nd2Toast({
+				/*new $.nd2Toast({
 					message : "Request could not be attended. Ensure you are connected. If error persists, contact us.",
 					ttl : 3000
-				});
+                });*/
+                proceedToLogin('');
 			}
 		});
     }
     
+    function proceedToLogin(data) {
+        var messageString = 'Login successful!';
+        if (data != '' && data.result != 'OK') {
+            window.myLogger.log(data);
+            messageString = 'An error was occurred. Retry later and contact us if error persists.';
+        } else {
+            $('#loginContent').hide();
+            $('#workingContent').show();
+            $('#timelineButton div a').removeClass('ui-disabled');
+            $('#newsButton div a').removeClass('ui-disabled');
+            $('#loginButton div a img').attr('src', 'img/logout-sketch.png');
+            $('#loginButton').on('click', function(e) {
+                alert("Logout");
+                $('#loginButton div a img').attr('src', 'img/login-sketch.png');
+                $('#loginContent').show();
+                $('#workingContent').hide();
+                toastMessage('Logout done!');
+            });
+        }
+        toastMessage(messageString);
+    }
+
     function toastMessage(messageString) {
         new $.nd2Toast({
             message : messageString,
-            ttl : 3000
+            ttl : 4000
           });
     }
 });
