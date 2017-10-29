@@ -1,17 +1,20 @@
-<div role="main" id="homeContent" class="ui-content" data-inset="false" style="padding:3em;">
-    <div role="main" id="loginContent" class="ui-content" data-inset="false" style="padding:3em;">
-        <div style="text-align:center"><img src="img/key.png"/></div>
-        <form method="post" action="#pageone" data-ajax="true">
+<div role="main" id="homeContent" class="ui-content" data-inset="false">
+    <div role="main" id="workingContent" style="display:none">
+        <img src="img/idea.png" style="width:100%; height:100%"/>
+    </div>
+    <div role="main" id="loginContent" class="ui-content" data-inset="false" style="padding:2em;">
+        <div style="text-align:center"><img src="img/key-sketch.png"/></div>
+        <form method="post" action="/user/login" data-ajax="false" id="loginForm">
             <div class="ui-field-contain" style="border-bottom-width:0">
-                <label for="email" class="ui-hidden-accessible">Email</label>
-                <input type="email" name="email" id="email" value="" placeholder="your@email.com">
+                <label for="loginEmail" class="ui-hidden-accessible">Email</label>
+                <input type="email" name="loginEmail" id="loginEmail" value="" placeholder="your@email.com">
             </div>
-            <span id="email-error"></span>
+            <span id="loginEmail-error"></span>
             <div class="ui-field-contain" style="border-bottom-width:0">
-                <label for="passwd" class="ui-hidden-accessible">Password</label>
-                <input type="password" name="passwd" id="passwd" value="password">
+                <label for="loginPasswd" class="ui-hidden-accessible">Password</label>
+                <input type="password" name="loginPasswd" id="loginPasswd" value="password">
             </div>
-            <span id="passwd-error"></span>
+            <span id="loginPasswd-error"></span>
             <button class="ui-btn" type="submit" id="submitButton"><i class="zmdi zmdi-mail-send"></i>Login</button>
             <a href='#register' class='ui-btn ui-mini nd2-btn-icon-block' data-ajax='false'>
                 <i class="zmdi zmdi-mail-send"></i>Register</a>
@@ -22,23 +25,4 @@
 </div>
 
 <script src="js/jquery.validate-1.17.0.js" />
-<script>
-    $(document).ready(function() {
-        $( "form" ).validate({
-            rules: {
-                email: {
-                    required: true,
-                    email: true
-                },
-                passwd: {
-                    required: true,
-                    maxlength:10,
-                    minlength:6
-                }
-            },
-            errorPlacement: function( error, element ) {
-                error.appendTo( $('#' + element.attr('name') + '-error' ));
-            }
-        });
-    });
-</script>
+<script src="js/login.js" />

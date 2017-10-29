@@ -24,6 +24,19 @@
 			<nd2-include data-src="login.html"></nd2-include>
 		</div>
 
+		<div data-role="page" id="logout">
+			<div data-role="popup" id="logoutDialog">
+				<div data-role="header">
+					<h1 class='nd-title'>Do you really want to logout?</h1>
+				</div>
+			
+				<div data-role="content">
+					<a href="#" data-rel="back" data-role="button" data-inline="true" class="ui-btn ui-btn-primary"><i class='zmdi zmdi-check'></i> Sounds good</a>
+					<a href="#" data-rel="back" data-role="button" data-inline="true" class="ui-btn ui-btn-primary"><i class='zmdi zmdi-cancel'></i> Cancel</a>
+				</div>
+			</div>
+		</div>
+		
 		<div data-role="page" id="timeline" style="text-align:center">
 
 			<nd2-include data-src="footer.html"></nd2-include>
