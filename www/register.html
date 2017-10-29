@@ -1,22 +1,22 @@
 <div role="main" id="homeContent" class="ui-content" data-inset="false" style="padding:3em;">
     <div role="main" id="registerContent" class="ui-content" data-inset="false" style="padding:3em;">
         <div style="text-align:center"><img src="img/add-user.png"/></div>
-            <form method="post" action="#pageone" data-ajax="true">
+            <form method="post" action="/user/register" data-ajax="false" id="registerForm">
                 <div class="ui-field-contain" style="border-bottom-width:0">
-                    <label for="email" class="ui-hidden-accessible">Email</label>
-                    <input type="email" name="email" id="email" value="" placeholder="your@email.com">
+                    <label for="registerEmail" class="ui-hidden-accessible">Email</label>
+                    <input type="email" name="registerEmail" id="registerEmail" value="" placeholder="your@email.com">
                 </div>
-                <span id="email-error"></span>
+                <span id="registerEmail-error"></span>
                 <div class="ui-field-contain" style="border-bottom-width:0">
-                    <label for="passwd" class="ui-hidden-accessible">Password</label>
-                    <input type="password" name="passwd" id="passwd" value="password">
+                    <label for="registerPasswd" class="ui-hidden-accessible">Password</label>
+                    <input type="password" name="registerPasswd" id="registerPasswd" value="password">
                 </div>
-                <span id="passwd-error"></span>
+                <span id="registerPasswd-error"></span>
                 <div class="ui-field-contain" style="border-bottom-width:0">
-                    <label for="repasswd" class="ui-hidden-accessible">Re-type password</label>
-                    <input type="password" name="repasswd" id="repasswd" value="repassword">
+                    <label for="registerRepasswd" class="ui-hidden-accessible">Re-type password</label>
+                    <input type="password" name="registerRepasswd" id="registerRepasswd" value="repassword">
                 </div>
-                <span id="repasswd-error"></span>
+                <span id="registerRepasswd-error"></span>
                 <button class="ui-btn"><i class="zmdi zmdi-mail-send"></i>Register</button>
                 <a href='#home' class='ui-btn ui-mini nd2-btn-icon-block' data-ajax='false'>
                         <i class="zmdi zmdi-mail-send"></i>Login</a>
@@ -25,27 +25,4 @@
 </div>
 
 <script src="js/jquery.validate-1.17.0.js" />
-<script>
-    $(document).ready(function() {
-        $( "form" ).validate({
-            rules: {
-                email: {
-                    required: true,
-                    email: true
-                },
-                passwd: {
-                    required: true,
-                    min:6,
-                    max:10
-                },
-                repasswd: {
-                    required: true,
-                    equalTo: '#passwd'
-                }
-            },
-            errorPlacement: function( error, element ) {
-                error.appendTo( $('#' + element.attr('name') + '-error' ));
-            }
-        });
-    });
-</script>
+<script src="js/register.js" />
