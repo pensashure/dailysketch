@@ -24,10 +24,10 @@ $(document).ready(function() {
 			data: $('#lostpwdForm').serialize(),
 			dataType: 'json',
 			async: false,
-			success: function(data) {
+			success: function(response) {
 				var messageString = 'Credentials sent to your email!';
-				if (data.result != 'OK') {
-					window.myLogger.log(data);
+				if (response.result != 'OK') {
+					window.myLogger.log(response);
 					messageString = 'An error was occurred. Retry later and contact us if error persists.';
 				}
 				new $.nd2Toast({

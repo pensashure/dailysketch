@@ -19,7 +19,11 @@ $(document).ready(function() {
     $(document).on('submit', '#loginForm', function(e) {
 		e.preventDefault();
 		postLoginForm();
-	});
+    });
+    
+    if (mySession.isLoggedIn()) {
+        switchMainScreen();
+    }
 
 	function postLoginForm() {
 		$('#loginEmail-error').text('');
@@ -30,42 +34,37 @@ $(document).ready(function() {
 			data: $('#loginForm').serialize(),
 			dataType: 'json',
 			async: false,
-			success: function(data) {
-				proceedToLogin(data);
+			success: function(response) {
+				proceedToLogin(response);
 			},
 			error: function (xhr, ajaxOptions, thrownError) {
 				window.myLogger.log("DailySketch Error: " + xhr.status + "\n" +
 					"Message: " + xhr.statusText + "\n" +
 					"Response: " + xhr.responseText + "\n" + thrownError);
-				/*new $.nd2Toast({
-					message : "Request could not be attended. Ensure you are connected. If error persists, contact us.",
-					ttl : 3000
-                });*/
                 proceedToLogin('');
 			}
 		});
     }
     
-    function proceedToLogin(data) {
+    function proceedToLogin(response) {
         var messageString = 'Login successful!';
-        if (data != '' && data.result != 'OK') {
-            window.myLogger.log(data);
+        if (response != '' && response.result != 'OK') {
+            window.myLogger.log(response);
             messageString = 'An error was occurred. Retry later and contact us if error persists.';
         } else {
-            $('#loginContent').hide();
-            $('#workingContent').show();
-            $('#timelineButton div a').removeClass('ui-disabled');
-            $('#newsButton div a').removeClass('ui-disabled');
-            $('#loginButton div a img').attr('src', 'img/logout-sketch.png');
-            $('#loginButton').on('click', function(e) {
-                alert("Logout");
-                $('#loginButton div a img').attr('src', 'img/login-sketch.png');
-                $('#loginContent').show();
-                $('#workingContent').hide();
-                toastMessage('Logout done!');
-            });
+            mySession.setLogIn(response.data);
+            switchMainScreen();
         }
         toastMessage(messageString);
+    }
+
+    function switchMainScreen() {
+        $('#loginContent').hide();
+        $('#workingContent').css('display', 'block');
+        $('#timelineButton div a').removeClass('ui-disabled');
+        $('#newsButton div a').removeClass('ui-disabled');
+        $('#loginButton').hide();
+        $('#logoutButton').show();
     }
 
     function toastMessage(messageString) {
