@@ -1,11 +1,12 @@
-var Session = function(settings) {
+var Session = function(globalLogger, settings) {
     
     var sessionStorageName = 'dailySketchSession';
+    var logger = globalLogger;
 
     // *** PRIVATE *** 
     var _log = function(data) {
         if (_config.debug) {
-            console.log(data);
+            logger.log(data);
         }
     }
     var _saveInSession = function(dataObject) {
@@ -29,12 +30,11 @@ var Session = function(settings) {
             debug : false
         };
     $.extend( _config, settings );
-    _log(_config);
 
     // *** PUBLIC ***
     return {
 
-        setLogIn: function(sessionData) {
+        login: function(sessionData) {
             _log("setLogIn function");
             sessionObject = {
                 'loggedIn': 1,
@@ -43,7 +43,7 @@ var Session = function(settings) {
             _saveInSession(sessionObject);
         },
 
-        setLogOut: function() {
+        logout: function() {
             _clearSession();
         },
 
@@ -65,5 +65,5 @@ var Session = function(settings) {
     }
 };
 // ALERT: global variable as it is in global scope
-var mySession = new Session({debug:true});
+var mySession = new Session(myLogger, {debug:false});
 
