@@ -22,11 +22,11 @@ var FooterBar = function(globalLogger, settings) {
         setForPage: function(targetPage) {
             _log("showHideButtonsFor function for page " + targetPage);
             if (mySession.isLoggedIn()) {
-                $(targetPage + ' .timelineButton').removeClass('ui-disabled');
-                $(targetPage + ' .newsButton').removeClass('ui-disabled');
+                $(targetPage + ' .publishButton').removeClass('ui-disabled');
+                $(targetPage + ' .favouritesButton').removeClass('ui-disabled');
             } else {
-                $(targetPage + ' .timelineButton').addClass('ui-disabled');
-                $(targetPage + ' .newsButton').addClass('ui-disabled');
+                $(targetPage + ' .publishButton').addClass('ui-disabled');
+                $(targetPage + ' .favouritesButton').addClass('ui-disabled');
             }
         }
     }
