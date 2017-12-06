@@ -84,6 +84,6 @@ var Timeline = function(settings) {
 };
 
 $(document).ready(function() {
-	var myTimeline = new Timeline({callback:'http://camvaz.000webhostapp.com/timeline.php', debug:false});
+	var myTimeline = new Timeline({callback:'http://sketch.pensashure.com/timeline.php', debug:false});
 	myTimeline.retrieve();
 });
