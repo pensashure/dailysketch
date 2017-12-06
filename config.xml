@@ -67,9 +67,8 @@
 	<preference name="phonegap-version" value="cli-6.5.0" />
 	<preference name="orientation" value="portrait" />
 
-	<access origin="http://api.pensashure.com" />
+	<access origin="http://sketch.pensashure.com" />
 	<access origin="https://apis.google.com" />
-	<access origin="https://accounts.google.com" />
 	<access origin="https://ssl.gstatic.com" />
 
 </widget>
