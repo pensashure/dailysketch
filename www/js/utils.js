@@ -2,11 +2,17 @@ var Utils = function(globalLogger, settings) {
     
     // *** PRIVATE *** 
     var logger = globalLogger;
+    var uuid = '';
 
     var _log = function(data) {
         if (_config.debug) {
             logger.log(data);
         }
+    }
+
+    var setUUID = function(id) {
+        uuid = id;
+        _log(uuid);
     }
 
     var _config = {
@@ -23,6 +29,10 @@ var Utils = function(globalLogger, settings) {
                 message : messageString,
                 ttl : 1000
             });
+        },
+
+        getUUID: function() {
+            window.plugins.uniqueDeviceID.get(setUUID, _log);
         }
     }
 };
