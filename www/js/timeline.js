@@ -68,17 +68,24 @@ var Timeline = function(settings) {
 		retrieve: function() {
 			
 			_log("retrieve function");
-
-			$.getJSON(_config.callback, function(data) {
-				var html = '';
-				if (data.total > 0) {
-					var items = data.items;
-					for (i=0; i < items.length; i++) {
-						html = html + _card_template(items[i]);
+			$.getJSON(_config.callback)
+				.done(function(data){
+					var html = '';
+					if (data.total > 0) {
+						var items = data.items;
+						for (i=0; i < items.length; i++) {
+							html = html + _card_template(items[i]);
+						}
 					}
-				}
-				$('#' + _config.container).html(html);
-			});
+					$('#' + _config.container).html(html);
+				})
+				.error(function(jqxhr, textStatus, error) {
+					var err = textStatus + ", " + error;
+					myUtils.toast("Request Failed. Try again: " + err);
+				})
+				.complete(function(){
+					myUtils.toast("New sketches loaded!");
+				});
 		}
 	}
 };
