@@ -12,6 +12,7 @@
 	<plugin name="cordova-plugin-splashscreen" source="npm" />
 	<plugin name="cordova-plugin-device" source="npm" />
 	<plugin name="cordova-plugin-uniquedeviceid" source="npm" />
+	<plugin name="cordova-plugin-whitelist" source="npm" />
 
 	<platform name="android">
 
